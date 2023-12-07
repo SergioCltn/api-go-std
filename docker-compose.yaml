@@ -10,5 +10,12 @@ services:
       - "5432:5432"
     volumes:
       - postgres:/var/lib/postgresql/data
+  server:
+    image: api-go-std:latest
+    build: ./
+    ports:
+      - 8081:8081
+    depends_on:
+      - postgres
 volumes:
   postgres:

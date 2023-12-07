@@ -17,8 +17,7 @@ import (
 )
 
 func main() {
-	connStr := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-		"localhost", 5432, "root", "secret", "api_go_sstd")
+	connStr := fmt.Sprintf("postgresql://root:secret@postgres:5432/api_go_std?sslmode=disable")
 
 	userRepository := repositories.NewUserRepositoryDB(connStr)
 
